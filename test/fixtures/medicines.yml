@@ -4,7 +4,7 @@ one:
   name: MyString
   price: 1
   unit: MyString
-  medicineCategory: one
+  medicine_category: one
   use: MyString
   description: MyString
 
@@ -12,6 +12,6 @@ two:
   name: MyString
   price: 1
   unit: MyString
-  medicineCategory: two
+  medicine_category: two
   use: MyString
   description: MyString

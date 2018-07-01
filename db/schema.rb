@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180629154508) do
+ActiveRecord::Schema.define(version: 20180701064621) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
@@ -32,6 +32,12 @@ ActiveRecord::Schema.define(version: 20180629154508) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "ingredients", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "medicine_categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -42,12 +48,21 @@ ActiveRecord::Schema.define(version: 20180629154508) do
     t.string "name"
     t.integer "price"
     t.string "unit"
-    t.integer "medicineCategory_id"
+    t.integer "medicine_category_id"
     t.string "use"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["medicineCategory_id"], name: "index_medicines_on_medicineCategory_id"
+    t.index ["medicine_category_id"], name: "index_medicines_on_medicine_category_id"
+  end
+
+  create_table "prescription_diseases", force: :cascade do |t|
+    t.integer "disease_id"
+    t.integer "prescription_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["disease_id"], name: "index_prescription_diseases_on_disease_id"
+    t.index ["prescription_id"], name: "index_prescription_diseases_on_prescription_id"
   end
 
   create_table "prescription_medicines", force: :cascade do |t|
@@ -70,11 +85,6 @@ ActiveRecord::Schema.define(version: 20180629154508) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_prescriptions_on_customer_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end

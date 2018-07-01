@@ -4,7 +4,7 @@ class CreateMedicines < ActiveRecord::Migration[5.1]
       t.string :name
       t.integer :price
       t.string :unit
-      t.references :medicineCategory, foreign_key: true
+      t.references :medicine_category, foreign_key: true
       t.string :use
       t.string :description
 
