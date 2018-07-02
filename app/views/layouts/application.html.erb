@@ -9,6 +9,17 @@
   </head>
 
   <body>
+    <div class="container">
+    <%= nav_bar brand: "Simple Pharmacy", fixed: :top, responsive: true do %>
+      <%= menu_group do %>
+            <%= menu_item "Home", root_path %>
+            <%= menu_item "Customer", customers_path %>
+        <% end %>
+    <% end %>
+    <div class="body">
     <%= yield %>
+    </div>
+    <div class="bottom"></div>
+    </div>
   </body>
 </html>

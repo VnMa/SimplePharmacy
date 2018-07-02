@@ -32,6 +32,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'faker', '~> 1.8', '>= 1.8.7'
 
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem 'twitter-bootstrap-rails', '~> 4.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
