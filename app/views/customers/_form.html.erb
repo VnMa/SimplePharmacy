@@ -32,7 +32,8 @@
   <div class="form-group">
     <%= f.label :dob, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :dob, :class => 'form-control' %>
+      <%# f.text_field :dob, :class => 'form-control' %>
+      <%= f.date_field :dob, :class => 'form-control' %>
     </div>
     <%=f.error_span(:dob) %>
   </div>
@@ -60,21 +61,22 @@
   <div class="form-group">
     <%= f.label :email, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :email, :class => 'form-control' %>
+      <%= f.email_field :email, :class => 'form-control' %>
     </div>
     <%=f.error_span(:email) %>
   </div>
   <div class="form-group">
     <%= f.label :gender, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :gender, :class => 'form-control' %>
+      <%# f.text_field :gender, :class => 'form-control' %>
+      <%= select_tag :gender, options_for_select([['Male', 'M'], ['Female', 'F']]), :class => 'form-control' %>
     </div>
     <%=f.error_span(:gender) %>
   </div>
   <div class="form-group">
     <%= f.label :description, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :description, :class => 'form-control' %>
+      <%= f.text_area :description, :class => 'form-control' %>
     </div>
     <%=f.error_span(:description) %>
   </div>

@@ -14,12 +14,14 @@
       <%= menu_group do %>
             <%= menu_item "Home", root_path %>
             <%= menu_item "Customer", customers_path %>
+            <%= menu_item "Medicines", medicines_path %>
         <% end %>
     <% end %>
-    <div class="body">
+    <%= render 'shared/flash' %>
+    <div class="page-body">
     <%= yield %>
     </div>
-    <div class="bottom"></div>
+    <div class="page-bottom"></div>
     </div>
   </body>
 </html>
