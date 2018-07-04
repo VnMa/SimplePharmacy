@@ -1,15 +1,22 @@
 class MedicinesController < ApplicationController
   def index
-    @medicines = Medicine.first(20)
+    @medicines = Medicine.includes(:medicine_category).first(20)
   end
 
   def show
     @medicine = Medicine.find params[:id]
   end
 
+  def new
+    @medicine = Medicine.new
+  end
 
   def create
     @medicine = Medicine.create medicine_params
+    if @medicine
+      flash[:notice] = "Yay, medicine created successfully"
+      redirect_to medicines_path
+    end
   end
 
   def edit

@@ -12,13 +12,12 @@
     <div class="container">
     <%= nav_bar brand: "Simple Pharmacy", fixed: :top, responsive: true do %>
       <%= menu_group do %>
-            <%= menu_item "Home", root_path %>
             <%= menu_item "Customer", customers_path %>
             <%= menu_item "Medicines", medicines_path %>
         <% end %>
     <% end %>
-    <%= render 'shared/flash' %>
     <div class="page-body">
+    <%= render 'shared/flash' %>
     <%= yield %>
     </div>
     <div class="page-bottom"></div>

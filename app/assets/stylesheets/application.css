@@ -15,5 +15,9 @@
  */
 
 .page-body {
-    padding: 20px;
+    padding-top: 80px;
+}
+
+.container>nav {
+    padding-bottom: 20px;
 }

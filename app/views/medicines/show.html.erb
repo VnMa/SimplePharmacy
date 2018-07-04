@@ -11,7 +11,7 @@
   <dt><strong><%= model_class.human_attribute_name(:unit) %>:</strong></dt>
   <dd><%= @medicine.unit %></dd>
   <dt><strong><%= model_class.human_attribute_name(:medicine_category_id) %>:</strong></dt>
-  <dd><%= @medicine.medicine_category_id %></dd>
+  <dd><%= @medicine.medicine_category.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:use) %>:</strong></dt>
   <dd><%= @medicine.use %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>

@@ -3,13 +3,15 @@
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 
+<div>
+<%= paginate @customers, window: 1, outer_window: 1  %>
+</div>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_customer_path,
             :class => 'btn btn-primary' %>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:id_card) %></th>
       <th><%= model_class.human_attribute_name(:dob) %></th>
@@ -25,8 +27,7 @@
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
-        <td><%= link_to customer.id, customer_path(customer) %></td>
-        <td><%= customer.name %></td>
+        <td><%= link_to customer.name, customer_path(customer) %></td>
         <td><%= customer.id_card %></td>
         <td><%= customer.dob %></td>
         <td><%= customer.pob %></td>
@@ -50,3 +51,6 @@
     <% end %>
   </tbody>
 </table>
+
+
+<%= paginate @customers, window: 1, outer_window: 1  %>
